@@ -4,33 +4,36 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { FaCaretDown } from "react-icons/fa";
 import DarkMode from "./DarkMode";
+import { IoIosLogIn } from "react-icons/io";
+// import {GiArchiveRegister }
+import {GiArchiveRegister} from "react-icons/gi";
 import { FiShoppingBag } from "react-icons/fi";
 
 const Menu = [
   {
     id: 1,
     name: "Home",
-    link: "/#",
+    link: "/",
   },
   {
     id: 2,
     name: "Top Rated",
-    link: "/#services",
+    link: "/services",
   },
   {
     id: 3,
     name: "Kids Wear",
-    link: "/#",
+    link: "/",
   },
   {
     id: 3,
     name: "Mens Wear",
-    link: "/#",
+    link: "/",
   },
   {
     id: 3,
     name: "Electronics",
-    link: "/#",
+    link: "/",
   },
 ];
 
@@ -38,21 +41,21 @@ const DropdownLinks = [
   {
     id: 1,
     name: "Trending Products",
-    link: "/#",
+    link: "/",
   },
   {
     id: 2,
     name: "Best Selling",
-    link: "/#",
+    link: "/",
   },
   {
     id: 3,
     name: "Top Rated",
-    link: "/#",
+    link: "/",
   },
 ];
 
-const Navbar = ({ handleOrderPopup }) => {
+const Navbar = ({ handleOrder , handleRegister, handleLogin}) => {
   return (
     <div className="shadow-md bg-white dark:bg-slate-800 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
@@ -76,17 +79,35 @@ const Navbar = ({ handleOrderPopup }) => {
               />
               <IoMdSearch className="text-slate-800 group-hover:text-primary absolute top-1/2 -translate-y-1/2 right-3" />
             </div>
-
-            {/* order button */}
+            {/* Login button */}
             <button
-              onClick={() => handleOrderPopup()}
+                onClick={() => handleLogin()}
               className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white  py-1 px-4 rounded-full flex items-center gap-3 group"
             >
               <span className="group-hover:block hidden transition-all duration-200">
-                Order
+                Login
               </span>
-              <FaCartShopping className="text-xl text-white drop-shadow-sm cursor-pointer" />
+              <IoIosLogIn className="text-xl text-white drop-shadow-sm cursor-pointer" />
             </button>
+            {/* Register-button */}
+
+            <button
+              onClick={() => handleRegister()}
+              className="bg-gradient-to-r from-primary to-secondary transition-all duration-200 text-white  py-1 px-4 rounded-full flex items-center gap-3 group"
+            >
+              <span className="group-hover:block hidden transition-all duration-200">
+                Register
+              </span>
+              <GiArchiveRegister className="text-xl text-white drop-shadow-sm cursor-pointer" />
+            </button>
+
+            {/* order button */}
+            <button
+          onClick={handleOrder}
+          className="bg-gradient-to-r from-primary to-secondary text-white py-1 px-4 rounded-full flex items-center gap-3"
+        >
+          Order
+        </button>
 
             {/* Darkmode Switch */}
             <div>
@@ -138,3 +159,17 @@ const Navbar = ({ handleOrderPopup }) => {
 };
 
 export default Navbar;
+
+
+// const Navbar = ({ setIsAuthenticated }) => {
+//   const handleLogout = () => {
+//     localStorage.removeItem("isAuthenticated");
+//     setIsAuthenticated(false);
+//   };
+
+//   return (
+//     <nav>
+//       <button onClick={handleLogout}>Logout</button>
+//     </nav>
+//   );
+// };
