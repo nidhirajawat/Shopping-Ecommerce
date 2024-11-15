@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -29,7 +30,7 @@ const Register = () => {
           <input
             type="name"
             value={name}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setName(e.target.value)}
             required
             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 hover:border-gray-500"
             placeholder="Enter your name"
@@ -42,7 +43,7 @@ const Register = () => {
           <input
             type="email"
             value={email}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 hover:border-gray-500"
             placeholder="Enter your email"
@@ -66,7 +67,7 @@ const Register = () => {
         <div className="mb-4">
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition"
+            className="w-full bg-gradient-to-r from-primary to-secondary text-white py-2 rounded hover:bg-blue-600 transition"
           >
             Register
           </button>
@@ -77,9 +78,9 @@ const Register = () => {
         {/* <Link to="/register" className="text-blue-500 hover:text-blue-700 transition" >Create new account</Link> */}
           <Link
             to="/forget-password"
-            className="text-blue-500 hover:text-blue-700 transition"
+            className="text-blue-500 hover:text-blue-700 transition flex gap-2"
           >
-            Back To Login
+            {<IoIosArrowRoundBack/>} Back To Login
           </Link>
         </div>
       </form>
