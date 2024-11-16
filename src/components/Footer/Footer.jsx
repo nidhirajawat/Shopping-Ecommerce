@@ -24,19 +24,19 @@ import { IoCall } from "react-icons/io5";
 const FooterLinks = [
   {
     title: "Home",
-    link: "/#",
+    link: "/",
   },
   {
     title: "About",
-    link: "/#about",
+    link: "/about",
   },
   {
     title: "Contact",
-    link: "/#contact",
+    link: "/contact",
   },
   {
     title: "Blog",
-    link: "/#blog",
+    link: "/blog",
   },
 ];
 

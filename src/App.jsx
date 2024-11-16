@@ -11,6 +11,8 @@ import Footer from "./components/Footer/Footer";
 import Login from "./components/Form/Login";
 import Register from "./components/Form/Register";
 import Popup from "./components/Popup/Popup";
+import ForgotPassword from "./components/Form/ForgotPassword";
+import UpdatedPassword from "./components/Form/UpdatedPassword";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -38,6 +40,8 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forget-password" element={<ForgotPassword />} />
+        <Route path="/confirm-password" element={<UpdatedPassword />}/>
         <Route
           path="/"
           element={
